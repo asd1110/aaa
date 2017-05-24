@@ -1,0 +1,90 @@
+777777777sum of power of digits777777777777777
+public int sumOfPowerOfDigits(int input1){
+
+String m=Integer.toString(input1);	int n=m.length();	int a[]=new int[n];	int i=n-1;	while(input1>0){	a[i]=input1%10;	i--;	input1=input1/10;	}	int sum=0;	for(int j=0;j<n-1;j++ ){	sum=sum+(int)Math.pow(a[j],a[j+1]);	}	sum=sum+1;	return sum;	}}
+
+8888888888888sum of sum of digits in cyclic order8888888
+public int sumOfSumsOfDigits(int input1){
+// Read only region end
+// Write code here...
+String m=Integer.toString(input1);	int n=m.length();	int a[]=new int [n];	int i=n-1;	while(input1>0){	a[i]=input1%10;	i--;	input1=input1/10;	}	int sum=0;	for(int j=0;j<n;j++){	for(int k=j;k<n;k++){	sum+=a[k];	}	}	return sum;	}}
+
+999999999999999identify possible words9999999999999999999
+public String identifyPossibleWords(String input1,String input2){	
+input2= input2.toUpperCase();	input1=input1.toUpperCase();	int index=input1.indexOf('_');	String result="";	String[] a=input2.split(":");	for(int i=0; i<a.length; i++){	if(input1.substring(0,index).equals(a[i].substring(0,index))&&input1.substring(index+1).equals(a[i].substring(index+1)))	result+=a[i]+":";	}	if (result.equals(""))	return "ERROR-009";	return result.substring(0,result.length()-1);	}}
+
+
+10101010101010encoding three strings 101010101010101010
+
+public Result encodeThreeStrings(String input1,String input2,String input3){
+// Read only region end
+//Write code here...
+String out1="",out2="",out3="",newout3="";	String[] s={input1,input2,input3};	for(int i=0; i<3;i++){	int a=s[i].length();	if(a%3==0){	out1+=s[i].substring(0, a/3);	out2+=s[i].substring(a/3,(a/3+a/3));	out3+=s[i].substring((a/3+a/3));	}	if(a%3==1){	out1+=s[i].substring(0, a/3);	out2+=s[i].substring(a/3,2*(a/3)+1);	out3+=s[i].substring(2*(a/3)+1);	}	if(a%3==2){	out1+=s[i].substring(0, a/3+1);	out2+=s[i].substring(a/3+1,(a/3+a/3)+1);	out3+=s[i].substring((a/3+a/3)+1);	}	}	for(int i=0; i<out3.length(); i++){	if(Character.isUpperCase(out3.charAt(i)))	newout3+=String.valueOf(Character.toLowerCase(out3.charAt(i)));	else	newout3+=String.valueOf(Character.toUpperCase(out3.charAt(i)));	}	return (new Result(out1, out2, newout3));	}	}
+
+****************************************************************************
+first repetitive element
+
+import java.util.Scanner;
+
+public class firstRepetetiveElement {	public static void main(String[] args){
+		// TODO Auto-generated method stub
+int k, j = 0;	Scanner reader=new Scanner(System.in);	System.out.println("Enter no. of elements");	int input2=reader.nextInt();	int[] input1=new int[input2];	System.out.println("Enter array Elements");	for(int i=0;i<input2;i++)	{	input1[i]=reader.nextInt();	}	int[] count=new int[input2];	for(int i=0;i<input2;i++)	{	k=input1[i];	if(k<=0)	{	System.out.println(0);	break;	}	else	{	count[k]=count[k]+1;	j=count[k];	if(j>1)	{	System.out.println(k);	break; }}}}}
+
+******************************************************************************
+sum non prime index
+import java.util.Scanner;
+
+public class sumNonPrimeIndex {	public static void main(String[] args) {	int flag = 0, sum = 0, count = 0;	Scanner reader = new Scanner(System.in);	System.out.println("Enter no. of elements");	int input2 = reader.nextInt();	int[] input1 = new int[input2];	System.out.println("Enter array Elements");	for (int i = 0; i < input2; i++) {	input1[i] = reader.nextInt();	}	for (int i = 0; i < input2; i++) {	if (input1[i] <= 0) {	count = 1;	System.out.println(0);	}	}	if (count == 0) {	for (int i = 2; i < input2; i++) {	for (int k = 2; k < i; k++) {	if (i % k == 0) {	flag++;	}	}	if (flag > 0) {	sum += input1[i];	}	flag = 0;	}	System.out.println(sum);	}}}
+
+********************************************************************************
+sum prime index
+import java.util.Scanner;
+
+public class sumPrimeIndex {	public static void main(String[] args) {	int flag = 0, sum = 0, count = 0;	Scanner reader = new Scanner(System.in);	System.out.println("Enter no. of elements");	int input2 = reader.nextInt();	int[] input1 = new int[input2];	System.out.println("Enter array Elements");	for (int i = 0; i < input2; i++) {	input1[i] = reader.nextInt();	}	for (int i = 0; i < input2; i++) {	if (input1[i] <= 0) {	count = 1;	System.out.println(0);	}	}	if (count == 0) {	for (int i = 2; i < input2; i++) {	for (int k = 2; k < i; k++) {	if (i % k == 0) {	flag = 1;	}	}	if (flag == 0) {	sum += input1[i];	}	flag = 0;	}	System.out.println(sum);	}}}
+
+********************************************************************************
+siri 1 sum-min prime  sum-max prime sum-min no.
+
+import java.io.*;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;//important to fin min nd max number
+class GFG
+{
+	public static void main (String[] args)
+	{ int arr[]={2,3,4,5,6,7,8,9,10,12,17,23}; int size= arr.length; List a1=new ArrayList();  int i=0,sum=0; int smallest=arr[0];	 for(i=0;i<size;i++){  if (arr[i] < smallest)  smallest = arr[i];  }  System.out.println("smallest number is: " +smallest);   for (i = 0; i < size; i++)    {   boolean isPrime = true;  if (arr[i] == 1)  isPrime = false;  else    {  for (int j = 2; j <= arr[i] / 2; j++)  { if (arr[i] % j == 0)  {  isPrime = false;   break;   }  }     } if (isPrime) {  sum=sum+arr[i];   a1.add(arr[i]); }       }System.out.println("list of prime numbers : " + a1);   System.out.println("sum of prime numbers: " +sum);  int max = (Integer) Collections.max(a1);    int min = (Integer) Collections.min(a1);  int a= sum-smallest;   int b=sum-max;  int c=sum-min;  System.out.println("sum-smallest in array: " +a);  System.out.println("sum-max prime: " +b);  System.out.println("sum-min prime:" +c);  } }
+
+**********************************************************************************
+siri sum of no.s in primeindex  sum-min no. (non prime indices n sum)...
+
+import java.io.*;
+class PrimeNumbers
+{
+   public static void main (String[] args)  {  int arr[]={2,3,4,5,6,7,8,9,5,6,3};   int size= arr.length;   int sum=0;   int i =0;    int num =0;   int[] primeNumbers=new int[size];    for (i = 0; i < size; i++)    {      int counter=0;     for(num =i; num>=1; num--)  {  if(i%num==0)   {     counter = counter + 1;     }   }      if (counter ==2)   {    for(int j=0 ;j<size; j++)    {      primeNumbers[j]= arr[i];   }      System.out.println( primeNumbers[i]);   sum=sum+primeNumbers[i];   }   }   System.out.println("sum of numbers" +sum);   int smallest=arr[0];   for(i=0;i<size;i++)   {   if (arr[i] < smallest)  smallest = arr[i];   }  System.out.println("smallest number is" +smallest); int c=sum-smallest;   System.out.println("case2: " +c);   } }
+
+***********************************************************************************
+gap maxmin
+
+public class JavaApplications38 {
+
+    public static void main(String[] args) {  int num[] = {5, 5, 6, 2, 3, 4, 6, 6, 2, 4, 8, 6};   int max = 0;    int min = 9;  int i = 0, j = 0, flag = 0;   int len = num.length;   int p = 0;   int count[] = new int[len];   for (i = 0; i < len; i++) {    for (j = i; j < len - 1; j++) {   if (num[i] == num[j + 1]) {   count[p] = j - i;     flag = 1;       }     }     if (flag == 1) {  p++;     }    flag = 0;  }   for (i = 0; i < p - 1; i++) {    if (count[i] > max) {     max = count[i];    }    }   for (i = 0; i < p - 1; i++) {   if (count[i] < min) {   min = count[i];   }   }   System.out.println(max + "    " + min);   } }
+
+************************************************************************************
+dif count stable unstable
+
+public class Stable {	int difCountStableUnstable(int input1, int input2, int input3, int input4, int input5) {	int dif = 0;	int arr[] = { input1, input2, input3, input4, input5 };	int maxstable = 0;	int minUnStable = 10000000;	for (int i = 0; i < arr.length; i++) {  int n = arr[i];	int c[] = new int[10];	while (n != 0) {	int next = n % 10;	c[next] += 1;	n = n / 10;	}	int freq = 0;	for (int j = 0; j < c.length; j++) {	if (c[j] != 0) {	freq = c[j];	}	}	int flag = 0;	for (int j = 0; j < c.length; j++) {	if (c[j] != 0 && c[j] != freq) {	flag = 1;	break;	}	}	if (flag == 0) {	if (arr[i] > maxstable)	maxstable = arr[i];	} else if (flag == 1) {	System.out.println("i m here for" + arr[i]);  if (arr[i] < minUnStable)	minUnStable = arr[i];	}	}	dif = maxstable - minUnStable;	return dif;	} public static void main(String[] args) {	Stable s = new Stable();	int diff = s.difCountStableUnstable(1234, 4788, 2222, 2266, 1000);	System.out.println(diff);}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

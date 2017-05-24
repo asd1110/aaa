@@ -1,0 +1,90 @@
+phone number
+
+public class phn {
+
+	public static void main(String[] args)	{ Scanner sc=new Scanner(System.in);	System.out.println("Enter mobile no");	String in=sc.next();	int h=0;	int rem1=0;	int sum=0;int sum1=0;	int j=0;	int rem=0;	int a[]=new int[10];	String res="";	int result=0;	int arr[]=new int[10];	long b=Long.parseLong(in);	System.out.println("b="+b);	int len=in.length();int m=len-1; while(b>0) {	a[m]=(int)b%10; m--;	b=b/10;	}	h=a[0]; for(int i=0;i<a.length;i++) {	if(h%2!=0)	{	sum=sum+a[i];	if(i==9)	{	arr[j]=sum; 	j++;	}	if(sum%2==0)	{	arr[j]=sum; 	j++;	sum=0; if(i<=8)	{	h=a[i+1];	}	else{	h=a[i]; 	}		}	}	else if(h%2==0)	{ sum1=sum1+a[i]; 	if( i==9)	{	arr[j]=sum1;	j++;		System.out.println("sum is"+sum1);	}	if(sum1%2!=0)  {	arr[j]=sum1;	j++;	sum1=0;	if(i<=8)	{		h=a[i+1];	}	else	{	h=a[i];		}	}		}	}	for(int k=0;k<j;k++)	{		res+=arr[k];	}	result=Integer.parseInt(res);		System.out.println("result is "+res);	}}
+
+
+**************************************************
+hill pattern
+
+public class HillPattern {
+public static void main(String[] args) {	int input1=4;	int input2=5;	int input3=2;	int hash=0;	int sum=0;	for(int i=0;i<input1;i++){	sum=sum+((i+1)*(input2))+(i*hash);	hash=input2;	input2=input2+input3;	}	System.out.println(sum);}}  
+
+**************************************************
+birth month year and age calcu
+
+public class Age { public static void main(String[] args) {	String a = "32aym";	a = a.toUpperCase();	String c = "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC";	String e;	int Cyear = 2017;	int age =0,Byear=0,count = 0;	char b[]=a.toCharArray(); if((b[1]-48)<8) 	age = ((b[0]-48)*10 + (7-(b[1]-48)));	else	age = ((b[0]-48)*10 + 10 + (7-(b[1]-48)));	Byear = Cyear - age; String d [] = c.split(","); 	a=a.substring(2, 5);	for(int i=0;i<12;i++){	count = 0;	for(int j=0;j<3;j++){	e = String.valueOf(a.charAt(j));	if(d[i].contains(e))	count++;	}	if(count==3){	System.out.println(age+" "+d[i]+" "+Byear); 	break;		}	}}}
+
+**************************************************
+
+(sum of pri ind[1]-sum of pri ind[2])*(2nd hig va(1)-2nd hig va(1))
+
+
+public int findTwoArrayResult(int input1[],int input2[],int input3){
+	int sum1=0,sum2=0,result=0;
+ for(int i=2;i<input3;i++){
+ int flag=0;
+	for(int j=2;j<=i/2;j++){
+ if(i%j==0)
+	flag=1;}
+	if(flag==0){
+		sum1=input1[i];
+	sum2=input2[i];
+	}
+	}
+	Arrays.sort(input1);
+	Arrays.sort(input2);
+	result=(sum1-sum2)*(input1[input3-2]-input2[input3-2]);
+		return result;
+	}
+
+}
+
+*****************************************************
+
+(sum of alternate pri ind[1]-sum of alternate pri ind[2])*(2nd hig va(1)-2nd hig va(1))
+
+
+public int findTwoArrayResult(int input1[],int input2[],int input3){
+	int sum1=0,sum2=0,result=0,flag1=0;
+	for(int i=2;i<input3;i++){
+	int flag=0;
+	for(int j=2;j<=i/2;j++){
+	if(i%j==0)
+	flag=1;}
+	if(flag==0){
+	if(flag1==0){
+	sum1=input1[i];
+	sum2=input2[i];
+	flag1=1;}
+	else{
+		flag1=0;
+	}
+	}
+	}
+	Arrays.sort(input1);
+	Arrays.sort(input2);
+	result=(sum1-sum2)*(input1[input3-2]+input2[input3-2]);
+		return result;
+	}
+
+}
+
+
+******************************************************
+
+Unique cochi
+
+public class unique {
+ public static void main(String[] args) { String a = "Hello World"; String b= "";  a=a.toUpperCase();  int count=0,d=0;  for(int i=0;i<a.length();i++){  count = 0;  if(a.charAt(i)==' '){	b = b + a.charAt(i);	continue;  }  for(int j=0;j<a.length();j++){  if(i==j)	continue;  if(a.charAt(i)==(a.charAt(j)))  count++; } if(count>0) b=b + a.charAt(i); } String c[] = b.split(" "); b=b.replace(" ",""); int len=c.length; for(int k=0;k<len;k++)	d = d*10+c[k].length();a= b + ":" + d;System.out.println(a);}}
+********************************************************
+
+
+
+
+
+
+
+
+
